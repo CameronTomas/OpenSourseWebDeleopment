@@ -1,18 +1,17 @@
 {
-  "name": "week6",
+  "name": "lab3",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "hbs": "^4.1.0",
-    "mongoose": "^5.8.11",
-    "save": "^2.4.0"
-  }
+  "license": "ISC"
 }

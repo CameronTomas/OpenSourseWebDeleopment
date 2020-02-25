@@ -1,19 +1,29 @@
 const express = require('express');
-require('db/mongoose/mongoose.js');
 const hbs = require('hbs');
+
 const app = express();
-let user = require('DB/models/user');
+app.use(express.urlencoded({extended:false}));
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname+'/views/partials');
 app.use(express.static(__dirname+'/public'));
-app.use(express.urlencoded({extended:true}));
-
 app.get('/',(req,res)=>{
-    res.render('index.hbs');
+    res.render('index');
 })
-app.post('/results',(req,res)=>{
-    res.render('results.hbs',{name:req.body.name,email:req.body.email})
+app.get('/results',(req,res)=>{
+    res.render('results',{result:req.body.box});
 })
-app.listen(3000,()=>{
-    console.log("Runing on Port 3000")
+hbs.registerHelper("tablegen",function(numb){
+    var str ='';
+    str+='<table>';
+
+    for(let i=0; i<numb; i++)
+    {
+        str+='<p>';
+        str+= words;
+        str+='</p>';
+    }
+    return new hbs.handlebars.SafeString(str);
+});
+app.listen(3000, ()=>{
+    console.log('Server is running at localhost:3000');
 })
