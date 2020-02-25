@@ -24,6 +24,7 @@ hbs.registerHelper("tablegen",function(numb){
     }
     return new hbs.handlebars.SafeString(str);
 });
-app.listen(3000, ()=>{
-    console.log('Server is running at localhost:3000');
+const port = process.env.PORT || 80
+app.listen(port, ()=>{
+    console.log('listening on Port:3000');
 })
